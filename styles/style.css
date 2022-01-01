@@ -1,0 +1,14 @@
+#title-style{
+    color: rgb(35, 102, 141);
+    font-style: italic;
+}
+.nav-link{
+    color: rgb(31, 78, 102);
+}
+.nav-link:hover{
+    color: rgb(56, 56, 128);
+}
+.nav{
+    font-size: 21px;
+    font-style: bold;
+}
