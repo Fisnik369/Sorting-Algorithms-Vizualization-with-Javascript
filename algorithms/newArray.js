@@ -1,6 +1,6 @@
-function wait(milisec) { 
+function wait(sec) { 
     return new Promise(resolve => { 
-        setTimeout(() => { resolve('') }, milisec); 
+        setTimeout(() => { resolve('') }, sec); 
     }) 
 }
 let arraySize = document.querySelector('#size_of_array');
@@ -8,7 +8,7 @@ arraySize.addEventListener('input', function(){
     generateRandomArray(parseInt(arraySize.value));
 });
 
-let delay = 260;
+let delay = 1500;
 let delayElement = document.querySelector('#speed_value');
 
 delayElement.addEventListener('input', function(){
@@ -18,7 +18,7 @@ delayElement.addEventListener('input', function(){
 let array = [];
 generateRandomArray();
 
-function generateRandomArray(items = 20) {
+function generateRandomArray(items = 10) {
     deletePreviousArray();
 
     array = [];
@@ -45,3 +45,26 @@ const arrayGen = document.querySelector(".array_gen");
 arrayGen.addEventListener("click", function(){
     generateRandomArray(arraySize.value);
 });
+
+document.getElementById("play").setAttribute("disabled", "true")
+var stats = 0;
+
+function pauser() {
+    return new Promise(resolve => {
+        let playbuttonclick = function () {
+            document.getElementById("pause").removeAttribute("disabled")
+            document.getElementById("play").setAttribute("disabled", "true")
+            document.getElementById("play").removeEventListener("click", playbuttonclick);
+
+            stats = 0;
+            resolve("resolved");
+        }
+        document.getElementById("play").addEventListener("click", playbuttonclick)
+    })
+}
+document.getElementById("pause").addEventListener("click", function () {
+stats = 1;
+
+document.getElementById("pause").setAttribute("disabled", "true")
+document.getElementById("play").removeAttribute("disabled")
+})

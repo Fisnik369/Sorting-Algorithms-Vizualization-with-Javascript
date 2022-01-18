@@ -29,13 +29,13 @@
                 <div class="row bg-light">
                 <div class="col" id="array_gen">
                     <p>
-                        <a href="sort.html" class="btn btn-primary my-2 btn-lg array_gen">Generate new array</a>
+                        <a href="#" class="btn btn-primary my-2 btn-lg array_gen">Generate new array</a>
                     </p>
                 </div>
                 <div class="col text_color">
                     <span id="size">
                         <label for="customRange1" class="form-label">Size of array (from 5 to 20)</label>
-                        <input type="range" min="10" max="300" step=1 value=20 class="form-range" id="size_of_array">
+                        <input type="range" min="5" max="10" step=1 value=20 class="form-range" id="size_of_array">
                     </span>
                 </div>
                 <div class="col text_color">
@@ -59,6 +59,8 @@
         <section class="py-5 text-center container vizualize-bg">
           <div id="array_elem" class="flex-container"></div>
         </section>
+        <button id="pause" type="button" class="btn-primary my-2 btn-lg">Pause</button>
+        <button id="play" type="button" class="btn-primary my-2 btn-lg">Play</button>
           <script src="algorithms/bubbleSort.js"></script>
           <script src="algorithms/newArray.js"></script>
           <script src="algorithms/insertionSort.js"></script>
