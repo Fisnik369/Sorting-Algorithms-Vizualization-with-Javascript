@@ -33,7 +33,10 @@ function generateRandomArray(items = 10) {
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
+        bar.innerHTML = `<h4>${array[i]} </h4>`;
+        document.body.appendChild(bar)
         bars.appendChild(bar);
+       
     }
 }
 function deletePreviousArray() {
@@ -63,8 +66,8 @@ function pauser() {
     })
 }
 document.getElementById("pause").addEventListener("click", function () {
-stats = 1;
+    stats = 1;
 
-document.getElementById("pause").setAttribute("disabled", "true")
-document.getElementById("play").removeAttribute("disabled")
+    document.getElementById("pause").setAttribute("disabled", "true")
+    document.getElementById("play").removeAttribute("disabled")
 })

@@ -1,37 +1,44 @@
 body{
     background-color: rgb(233, 240, 240);
 }
-.container{
+.container {
     margin: auto;
     width: 100%;
 }
 
-#title-style{
+#title-style {
     color: rgb(35, 102, 141);
     font-style: italic;
 }
 .nav-link{
     color: rgb(31, 78, 102);
 }
-.nav-link:hover{
+.nav-link:hover {
     color: rgb(56, 56, 128);
 }
-.nav{
+.nav {
     font-size: 26px;
     font-style: bold;
 }
-.vizualize-bg{
+.vizualize-bg {
     background-color: rgb(235, 224, 230);
 }
-.text_color{
+.text_color {
     color: rgb(31, 78, 102);
 }
 footer{
     margin: auto;
     width: 100%;
 }
-.btn-pos{
+.btn-pos {
     padding: 15px;
+}
+.playPauseBtn {
+    background-color: green;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: 20px;
+    margin-top: 5px;
 }
 
 /* Vizualization part */
@@ -47,12 +54,17 @@ footer{
 .flex-item{
     background: rgb(56, 54, 173);
     border: 1pt solid rgb(189, 186, 216);
-    border-radius: 0 0 7px 11px;
-    width: 40px;
+    border-radius: 0 0 9px 9px;
+    width: 62px;
+    margin-right: 10px;
     transition: 0.1s all ease;
 }
 #input{
     display: flex;
     padding: 10px;
     justify-content: space-around;
+}
+h4 {
+    color: white;
+    padding: 10px;
 }
