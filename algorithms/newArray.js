@@ -5,7 +5,7 @@ function wait(sec) {
 }
 let arraySize = document.querySelector('#size_of_array');
 arraySize.addEventListener('input', function(){
-    generateRandomArray(parseInt(arraySize.value));
+    generateArray(parseInt(arraySize.value));
 });
 
 let delay = 1500;
@@ -16,26 +16,28 @@ delayElement.addEventListener('input', function(){
 });
 
 let array = [];
-generateRandomArray();
+generateArray();
 
-function generateRandomArray(items = 10) {
+function generateArray(items = 10) {
     deletePreviousArray();
 
     array = [];
-    for (let i = 0; i < items; i++) {
-        array.push(Math.floor(Math.random() * 250) + 1);
+    while(array.length < 10){
+        var r = Math.floor(Math.random() * 10) + 1;
+        if(array.indexOf(r) === -1) array.push(r);
     }
     const bars = document.querySelector("#array_elem");
 
     for (let i = 0; i < items; i++) {
         const bar = document.createElement("div");
-        bar.style.height = `${array[i]*2}px`;
+        bar.style.height = `${array[i]*50}px`;
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
         bar.innerHTML = `<h4>${array[i]} </h4>`;
         document.body.appendChild(bar)
         bars.appendChild(bar);
+        // TODO: move numbers to their elements accordingly
        
     }
 }
@@ -43,10 +45,9 @@ function deletePreviousArray() {
     const element = document.querySelector("#array_elem");
     element.innerHTML = '';
 }
-// TODO: Generate new array with the current size, not the defualt size
 const arrayGen = document.querySelector(".array_gen");
 arrayGen.addEventListener("click", function(){
-    generateRandomArray(arraySize.value);
+    generateArray(arraySize.value);
 });
 
 document.getElementById("play").setAttribute("disabled", "true")
