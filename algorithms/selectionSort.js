@@ -1,34 +1,42 @@
 async function selectionSort(){
     const ele = document.querySelectorAll(".bar");
+
     for(let i = 0; i < ele.length; i++){
         let min_index = i;
-        // Change color of the position to swap with the next min
         ele[i].style.background = 'blue';
+        if (stats == 1) await pauser();
+
         for(let j = i+1; j < ele.length; j++){
-            // Change color for the current comparision (in consideration for min_index)
             ele[j].style.background = 'red';
+            if (stats == 1) await pauser();
 
             await wait(delay);
             if(parseInt(ele[j].style.height) < parseInt(ele[min_index].style.height)){
                 if(min_index !== i){
-                    // new min_index is found so change prev min_index color back to normal
+                    if (stats == 1) await pauser();
                     ele[min_index].style.background = 'cyan';
                 }
                 min_index = j;
             } 
             else{
-                // if the currnent comparision is more than min_index change is back to normal
+                if (stats == 1) await pauser();
                 ele[j].style.background = 'cyan';
-            }   
+            }
+            if (stats == 1) await pauser(); 
         }
         await wait(delay);
         var temp = ele[min_index].style.height
+        var tempNumber = ele[min_index].innerHTML
+
         ele[min_index].style.height = ele[i].style.height
         ele[i].style.height = temp
+
+        ele[min_index].innerHTML = ele[i].innerHTML
+        ele[i].innerHTML = tempNumber
         
-        // change the min element index back to normal as it is swapped 
+        if (stats == 1) await pauser();
         ele[min_index].style.background = 'cyan';
-        // change the sorted elements color to green
+        if (stats == 1) await pauser();
         ele[i].style.background = 'green';
     }
 }

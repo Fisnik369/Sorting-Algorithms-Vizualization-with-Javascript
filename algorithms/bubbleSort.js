@@ -8,9 +8,14 @@ async function bubbleSort() {
             if(parseInt(ele[j].style.height) > parseInt(ele[j+1].style.height)){
                 await wait(delay);
                 var temp = ele[j].style.height
+                var tempNumber = ele[j].innerHTML
+                
                 if (stats == 1) await pauser();
                 ele[j].style.height = ele[j+1].style.height
                 ele[j+1].style.height = temp
+
+                ele[j].innerHTML = ele[j+1].innerHTML
+                ele[j+1].innerHTML = tempNumber
             }
             await wait(delay);
             if (stats == 1) await pauser();

@@ -3,6 +3,11 @@ function wait(sec) {
         setTimeout(() => { resolve('') }, sec); 
     }) 
 }
+function swap(ele1, ele2){
+    var temp = ele1.style.height
+    ele1.style.height = ele2.style.height
+    ele2.style.height = temp
+}
 let arraySize = document.querySelector('#size_of_array');
 arraySize.addEventListener('input', function(){
     generateArray(parseInt(arraySize.value));
@@ -31,14 +36,11 @@ function generateArray(items = 10) {
     for (let i = 0; i < items; i++) {
         const bar = document.createElement("div");
         bar.style.height = `${array[i]*50}px`;
+        bar.innerHTML = `<h4>${array[i]}</h4>`;
         bar.classList.add('bar');
         bar.classList.add('flex-item');
-        bar.classList.add(`barNo${i}`);
-        bar.innerHTML = `<h4>${array[i]} </h4>`;
         document.body.appendChild(bar)
-        bars.appendChild(bar);
-        // TODO: move numbers to their elements accordingly
-       
+        bars.appendChild(bar);   
     }
 }
 function deletePreviousArray() {
