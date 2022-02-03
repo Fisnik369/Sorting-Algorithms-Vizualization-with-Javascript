@@ -1,4 +1,4 @@
-async function partitionLomuto(ele, l, r){
+async function partition(ele, l, r){
     let i = l - 1;
     ele[r].style.background = 'red';
     for(let j = l; j <= r - 1; j++){
@@ -7,7 +7,6 @@ async function partitionLomuto(ele, l, r){
 
         if(parseInt(ele[j].style.height) < parseInt(ele[r].style.height)){
             i++;
-
             var temp1 = ele[i].style.height;
             var temp1Number = ele[i].innerHTML;
 
@@ -39,7 +38,6 @@ async function partitionLomuto(ele, l, r){
     ele[r].style.background = 'pink';
     ele[i].style.background = 'green';
 
-   
     await wait(delay);
     
     for(let k = 0; k < ele.length; k++){
@@ -52,7 +50,7 @@ async function partitionLomuto(ele, l, r){
 
 async function quickSort(ele, l, r){
     if(l < r){
-        let pivot_index = await partitionLomuto(ele, l, r);
+        let pivot_index = await partition(ele, l, r);
         await quickSort(ele, l, pivot_index - 1);
         await quickSort(ele, pivot_index + 1, r);
     }
