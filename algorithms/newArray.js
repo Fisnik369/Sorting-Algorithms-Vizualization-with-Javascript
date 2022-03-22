@@ -35,7 +35,7 @@ function generateArray(items = 10) {
 
     for (let i = 0; i < items; i++) {
         const bar = document.createElement("div");
-        bar.style.height = `${array[i]*50}px`;
+        bar.style.height = `${array[i]*35}px`;
         bar.innerHTML = `<h4>${array[i]}</h4>`;
         bar.classList.add('bar');
         bar.classList.add('flex-item');

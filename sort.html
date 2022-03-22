@@ -46,19 +46,35 @@
                 </div>
                 </div>
           </form>
+            <!-- <div class="col gap-1 d-sm-flex justify-content-md-start btn-pos">
+                <button type="button" class="btn-primary my-2 btn-lg bubbleSort">Bubble Sort</button>
+                <button type="button" class="btn-primary my-2 btn-lg insertionSort">Insertion Sort</button>
+                <button type="button" class="btn-primary my-2 btn-lg selectionSort">Selection Sort</button>
+                <button type="button" class="btn-primary my-2 btn-lg quickSort">Quick Sort</button>
+            </div> -->
 
-        <div class="col gap-2 d-sm-flex justify-content-center btn-pos">
-            <button type="button" class="btn-primary my-2 btn-lg bubbleSort">Bubble Sort</button>
-            <button type="button" class="btn-primary my-2 btn-lg insertionSort">Insertion Sort</button>
-            <button type="button" class="btn-primary my-2 btn-lg selectionSort">Selection Sort</button>
-            <button type="button" class="btn-primary my-2 btn-lg quickSort">Quick Sort</button>
-        </div>
-        <section class="py-5 text-center container justify-content-center">
-            <button id="pause" type="button" class="btn-primary my-2 btn-lg playPauseBtn">Pause</button>
-            <button id="play" type="button" class="btn-primary my-2 btn-lg playPauseBtn">Play</button>
-        </section>
-        <section class="py-5 text-center container vizualize-bg">
+            <div class="d-flex bd-highlight mb-3">
+                <div class="p-2 bd-highlight">
+                    <button type="button" class="btn-primary my-2 btn-lg btn-style bubbleSort">Bubble Sort</button>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button type="button" class="btn-primary my-2 btn-lg btn-style insertionSort">Insertion Sort</button>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button type="button" class="btn-primary my-2 btn-lg btn-style selectionSort">Selection Sort</button>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button type="button" class="btn-primary my-2 btn-lg btn-style quickSort">Quick Sort</button>
+                </div>
+                <div class="ms-auto p-2 bd-highlight">
+                    <button type="button" class="btn-primary my-2 sort-button btn-lg"> <i>Sort</i> </button>
+                </div>
+              </div>
+        </section> 
+        <section class="py-5 bg-light text-center container vizualize-bg">
           <div id="array_elem" class="flex-container"> </div>
+          <button id="play" class="button play bg-light playPauseBtn"></button>
+          <button id="pause" class="button pause bg-light playPauseBtn"></button>
         </section>
 
           <script src="algorithms/bubbleSort.js"></script>
