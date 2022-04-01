@@ -3,11 +3,7 @@ function wait(sec) {
         setTimeout(() => { resolve('') }, sec); 
     }) 
 }
-function swap(ele1, ele2){
-    var temp = ele1.style.height
-    ele1.style.height = ele2.style.height
-    ele2.style.height = temp
-}
+
 let arraySize = document.querySelector('#size_of_array');
 arraySize.addEventListener('input', function(){
     generateArray(parseInt(arraySize.value));
@@ -23,6 +19,7 @@ delayElement.addEventListener('input', function(){
 let array = [];
 generateArray();
 
+// Generates new array with 10 unique numbers between 1 and 10 indexed randomly
 function generateArray(items = 10) {
     deletePreviousArray();
 
@@ -43,10 +40,13 @@ function generateArray(items = 10) {
         bars.appendChild(bar);   
     }
 }
+
+// Deletes the previous array in order to be able to generate a new one
 function deletePreviousArray() {
     const element = document.querySelector("#array_elem");
     element.innerHTML = '';
 }
+
 const arrayGen = document.querySelector(".array_gen");
 arrayGen.addEventListener("click", function(){
     generateArray(arraySize.value);
@@ -55,9 +55,11 @@ arrayGen.addEventListener("click", function(){
 document.getElementById("play").setAttribute("disabled", "true")
 var stats = 0;
 
+// Pauses the vizualization of certain algorithm
 function pauser() {
     return new Promise(resolve => {
         let playbuttonclick = function () {
+
             document.getElementById("pause").removeAttribute("disabled")
             document.getElementById("play").setAttribute("disabled", "true")
             document.getElementById("play").removeEventListener("click", playbuttonclick);

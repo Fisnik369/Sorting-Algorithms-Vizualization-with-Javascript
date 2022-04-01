@@ -4,6 +4,7 @@ async function selectionSort(){
     for(let i = 0; i < ele.length; i++){
         let min_index = i;
         ele[i].style.background = 'blue';
+        
         if (stats == 1) await pauser();
 
         for(let j = i+1; j < ele.length; j++){
@@ -25,17 +26,13 @@ async function selectionSort(){
             if (stats == 1) await pauser(); 
         }
         await wait(delay);
-        var temp = ele[min_index].style.height
-        var tempNumber = ele[min_index].innerHTML
 
-        ele[min_index].style.height = ele[i].style.height
-        ele[i].style.height = temp
-
-        ele[min_index].innerHTML = ele[i].innerHTML
-        ele[i].innerHTML = tempNumber
+        await swapElements(ele[min_index], ele[i]);
+        await swapNumbers(ele[min_index], ele[i]);
         
         if (stats == 1) await pauser();
         ele[min_index].style.background = 'cyan';
+
         if (stats == 1) await pauser();
         ele[i].style.background = 'green';
     }
