@@ -26,7 +26,10 @@ function generateArray(items = 10) {
     array = [];
     while(array.length < 10){
         var r = Math.floor(Math.random() * 10) + 1;
-        if(array.indexOf(r) === -1) array.push(r);
+        
+        if(array.indexOf(r) === -1){
+            array.push(r);
+        }   
     }
     const bars = document.querySelector("#array_elem");
 
