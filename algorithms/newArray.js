@@ -19,7 +19,7 @@ delayElement.addEventListener('input', function(){
 let array = [];
 generateArray();
 
-// Generates new array with 10 unique numbers between 1 and 10 indexed randomly
+// Generates new array with 10 unique numbers between 1 and 10, indexed randomly
 function generateArray(items = 10) {
     deletePreviousArray();
 
