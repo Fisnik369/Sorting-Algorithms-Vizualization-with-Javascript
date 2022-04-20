@@ -22,6 +22,13 @@ body{
 }
 .vizualize-bg {
     background-color: rgb(235, 224, 230);
+    border: 1px solid black;
+    color: black;
+    border-radius: 7px;
+}
+.btn-style{
+    background-color: rgb(35, 102, 141);
+    border: 1px solid rgb(35, 102, 141);
 }
 .text_color {
     color: rgb(31, 78, 102);
@@ -52,8 +59,8 @@ footer{
     transition: 2.5s all ease;
 }
 .flex-item{
-    background: rgb(56, 54, 173);
-    border: 1pt solid rgb(189, 186, 216);
+    background: rgb(35, 102, 141);
+    border: 1px solid rgb(189, 186, 216);
     border-radius: 0 0 9px 9px;
     width: 62px;
     margin-right: 10px;
